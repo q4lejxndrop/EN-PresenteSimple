@@ -577,6 +577,13 @@ header {
 
     #activity-two {
         padding-top: 6rem;
+
+        & .container-emojis {
+
+            & button {
+                font-size: 5rem;
+            }
+        }
     }
 
     #content {
@@ -599,6 +606,7 @@ header {
     #team::after {
         width: auto;
         font-size: .7rem;
+        bottom: -75px;
     }
 
     .container-info {
