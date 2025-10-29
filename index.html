@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presente Simple - Sofia Bedoya</title>
     <link rel="stylesheet" href="/style.css">
+    <link type="image/png" sizes="16x16" rel="icon" href="/favicons-web/icons8-regalo-liquid-glass-16.png"> 
+    <link type="image/png" sizes="32x32" rel="icon" href="/favicons-web/icons8-regalo-liquid-glass-32.png"> 
+    <link type="image/png" sizes="96x96" rel="icon" href="/favicons-web/icons8-regalo-liquid-glass-96.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -13,12 +16,20 @@
     <header>
         <h1>Presente Simple</h1>
         <h2>Ingles</h2>
-        <h3>Presentación - Sofia Bedoya</h3>
+        <h3>Nuestro Grupo</h3>
+        <div id="team">
+            <ul>
+                <li>Sofia Bedoya</li>
+                <li>Maria del mar Salazar</li>
+                <li>Yessica Parra</li>
+                <li>Juan Diego Posada</li>
+            </ul>
+        </div>
         <button><a href="#w"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg></a></button>
 
         <div class="eleven">
-            <a href="https://www.meme-arsenal.com/memes/afb0138e2e21403a3f5dd5537b5383c0.jpg">
-                <h2>11°</h2>
+            <a href="https://www.meme-arsenal.com/memes/afb0138e2e21403a3f5dd5537b5383c0.jpg" target="_blank">
+                <h4>11°</h4>
             </a>
         </div>
     </header>
@@ -32,31 +43,93 @@
     <section id="content">
         <h2>Contenido</h2>
             <ul>
-                <li>Como se Forma
-                    <img src="/Icons/icons8-cómo-64.png" 
-                    alt="">
-                </li>
+                <button id="btn-how">
+                    <li>Como se Forma
+                        <img src="/Icons/icons8-cómo-64.png" 
+                        alt="">
+                    </li>
+                </button>
 
-                <li>Forma Negativa
-                    <img src="/Icons/icons8-bandera-vacía-100.png" 
-                    alt="">
-                </li>
+                <button id="btn-negative">
+                    <li>Forma Negativa
+                        <img src="/Icons/icons8-bandera-vacía-100.png" 
+                        alt="">
+                    </li>
+                </button>
 
-                <li>Forma Pregunta
-                    <img src="/Icons/icons8-pregunta-100.png" 
-                    alt="">
-                </li>
+                <button id="btn-question">
+                    <li>Forma Pregunta
+                        <img src="/Icons/icons8-pregunta-100.png" 
+                        alt="">
+                    </li>
+                </button>
 
-                <li>Palabras más comunes
-                    <img src="/Icons/icons8-17387-0-73139-actualizar-izquierda-32-flechas-100.png" 
-                    alt="">
-                </li>
+                <button id="btn-repeat">
+                    <li>Palabras más comunes
+                        <img src="/Icons/icons8-17387-0-73139-actualizar-izquierda-32-flechas-100.png" 
+                        alt="">
+                    </li>
+                </button>
 
-                <li>Ejemplos
-                    <img src="/Icons/icons8-aritmética-64.png" 
-                    alt="">
-                </li>
+                <button id="btn-examples">
+                    <li>Ejemplos
+                        <img src="/Icons/icons8-aritmética-64.png" 
+                        alt="">
+                    </li>
+                </button>
             </ul>
+            <div id="how">
+                <h2>🧩 Cómo se forma:</h2>
+                <p>Lo usamos cuando queremos expresar acciones que ocurren con frecuencia, hechos que siempre son verdaderos o situaciones que no cambian con el tiempo. como: rutinas, hábitos, gustos y costumbres
+                    Se usa la forma base del verbo con yo, tú, nosotros, ellos.
+                    Se le agrega -s o -es al verbo con él, ella, eso.
+                    Ejemplo: Yo juego fútbol, Él juega fútbol.
+                </p>
+            </div>
+
+            <div id="negative">
+                <h2>🚫 Forma negativa:</h2>
+                <!-- <p>Se usa para expresar acciones que no ocurren con frecuencia, hechos que siempre son falsos o situaciones que cambian con el tiempo. como: rutinas, hábitos, gustos y costumbres
+                    Se usa la forma base del verbo con yo, tú, nosotros, ellos.
+                    Se le agrega -no al verbo con él, ella, eso.
+                    Ejemplo: Yo no juego fútbol, Él no juega fútbol.
+                </p> -->
+                <p>Se usa don’t con yo, tú, nosotros, ellos y doesn’t con él, ella, eso, seguido del verbo base.
+                    Ejemplo: Yo no tomo café. / Ella no toma té.
+                </p>
+            </div>
+
+            <div id="question">
+                <h2>❓ Forma de pregunta:</h2>
+                <!-- <p>Se usa para preguntar sobre una acción que ocurre con frecuencia, hechos que siempre son verdaderos o situaciones que no cambian con el tiempo. como: rutinas, hábitos, gustos y costumbres
+                    Se usa la forma base del verbo con yo, tú, nosotros, ellos.
+                    Se le agrega -s o -es al verbo con él, ella, eso.
+                    Ejemplo: ¿Qué juegas fútbol?, ¿Qué juegas fútbol?
+                </p> -->
+                <p>Se usa Do o Does al principio, luego el sujeto y el verbo base.
+                    Ejemplo: ¿Tú estudias inglés? / ¿Él toca guitarra?
+                </p>
+            </div>
+
+            <div id="repeat">
+                <h2>🔁 Palabras más comunes:</h2>
+                <p>Siempre, usualmente, a menudo, a veces, nunca, todos los días, los lunes.
+                </p>
+            </div>
+
+            <div id="examples">
+                <h2>🟰 Ejemplos:</h2>
+                <p>Yo siempre me levanto temprano.
+
+                    Ella no come carne.
+
+                    ¿Ellos juegan fútbol los fines de semana?
+
+                    Él estudia inglés todos los días.
+
+                    Nosotros nunca vemos televisión en la noche.
+                </p>
     </section>
+    <script src="/script.js"></script>
 </body>
 </html>
