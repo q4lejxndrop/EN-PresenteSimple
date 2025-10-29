@@ -20,11 +20,12 @@ h1 {
 }
 
 header {
+        height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    flex-wrap: wrap;
     background-color: #fff;
     font-family: "Borel", cursive;
     color: #000;
@@ -96,4 +97,14 @@ header {
         padding: 1rem;
     }
 
+}
+
+@media screen and (max-width: 1000px) {
+    
+    h1 {
+    font-size: 4.2rem;
+    line-height: 75px;
+    text-wrap: auto;
+    text-align: center;
+    }
 }
