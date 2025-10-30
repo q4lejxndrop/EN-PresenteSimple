@@ -199,7 +199,7 @@ header {
     background-color: transparent;
     text-align: center;
     user-select: none;
-    cursor: pointer;
+    cursor: crosshair;
     
 }
 
