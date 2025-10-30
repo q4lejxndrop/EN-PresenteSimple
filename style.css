@@ -221,14 +221,37 @@ header {
 
 .share {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
     top: 0;
     left: 0;
     padding: 2rem 3rem;
     user-select: none;
 
+    & #btn-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding: .2rem .5rem;
+    background-color: #00000018;
+    border: 1px solid #000;
+    border-radius: 12px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+
+      & img {
+        height: auto;
+        width: 35px;
+        margin-bottom: 0;
+        opacity: .8;
+      }
+
+    }
+
     & button {
         display: block;
-        transition: .01s ease-in-out;
         background-color: #00000018;
         border: 1px solid #000;
         border-radius: 12px;
@@ -245,6 +268,42 @@ header {
         }
     }
 }
+
+#f2 {
+  display: none;
+}
+
+/* .languaje {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 3rem;
+
+  & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding: .2rem .5rem;
+    background-color: #00000018;
+    border: 1px solid #000;
+    border-radius: 12px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+
+      & img {
+        height: auto;
+        width: 35px;
+        margin-bottom: 0;
+        opacity: .8;
+      }
+
+
+    &:hover img {
+        opacity: 1;
+    }
+  }
+} */
 
 #container-qr-social {
   transition: all 0.3s ease-in-out;

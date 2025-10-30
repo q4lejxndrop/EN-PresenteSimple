@@ -35,6 +35,12 @@
 
         <div class="share">
             <button id="btn-share">Compartir</button>
+            <button id="btn-lang">
+                    <img src="/Icons/FlagColombia.png" 
+                    alt="" id="f1">
+                    <img src="/Icons/FlagUS.png" 
+                    alt="" id="f2">
+            </button>
             <ul id="container-qr-social">
                 <li class="qr-social">
                     <img src="/qr/PreSem-qr-code.png"
@@ -312,6 +318,25 @@
             </div>
         </div>
     </footer>
-    <script src="/script.js"></script>
+
+<!-- Contenedor oculto del traductor -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- Script de inicialización del traductor -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'es',
+        includedLanguages: 'en,es',
+        autoDisplay: false
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="/script.js"></script>
 </body>
 </html>

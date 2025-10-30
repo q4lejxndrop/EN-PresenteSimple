@@ -290,3 +290,42 @@ dice.addEventListener('click', () => {
       resetGallery();
     }
   });
+
+
+// Language
+const btnLang = document.getElementById('btn-lang');
+const f1 = document.getElementById('f1'); // 🇨🇴
+const f2 = document.getElementById('f2'); // 🇺🇸
+
+let state = false; // false = español, true = inglés
+
+btnLang.addEventListener('click', () => {
+  // Cambiar visibilidad de banderas
+  if (state) {
+    f2.style.display = 'none';
+    f1.style.display = 'block';
+  } else {
+    f2.style.display = 'block';
+    f1.style.display = 'none';
+  }
+
+  state = !state;
+
+  const select = document.querySelector('.goog-te-combo');
+
+  // Verifica si el traductor ya cargó
+  if (!select) {
+    alert('Por favor espera un momento mientras se carga el traductor...');
+    return;
+  }
+
+  // Cambiar idioma entre español e inglés
+  if (select.value === 'en') {
+    select.value = 'es';
+  } else {
+    select.value = 'en';
+  }
+
+  // Disparar el evento de cambio para traducir
+  select.dispatchEvent(new Event('change'));
+});
