@@ -300,7 +300,14 @@ const f2 = document.getElementById('f2'); // 🇺🇸
 let state = false; // false = español, true = inglés
 
 btnLang.addEventListener('click', () => {
-  // Cambiar visibilidad de banderas
+  const select = document.querySelector('.goog-te-combo');
+
+  if (!select) {
+    alert('Por favor espera un momento mientras se carga el traductor...');
+    return;
+  }
+
+  // Alternar banderas
   if (state) {
     f2.style.display = 'none';
     f1.style.display = 'block';
@@ -308,24 +315,19 @@ btnLang.addEventListener('click', () => {
     f2.style.display = 'block';
     f1.style.display = 'none';
   }
-
   state = !state;
 
-  const select = document.querySelector('.goog-te-combo');
-
-  // Verifica si el traductor ya cargó
-  if (!select) {
-    alert('Por favor espera un momento mientras se carga el traductor...');
-    return;
+  // 🔧 Forzar reset del traductor antes de cambiar idioma
+  const iframe = document.querySelector('.goog-te-banner-frame');
+  if (iframe) {
+    iframe.remove(); // Elimina la barra azul si existe
   }
 
-  // Cambiar idioma entre español e inglés
-  if (select.value === 'en') {
-    select.value = 'es';
-  } else {
-    select.value = 'en';
-  }
-
-  // Disparar el evento de cambio para traducir
-  select.dispatchEvent(new Event('change'));
+  // 🔁 Cambiar idioma de forma confiable
+  const nuevoIdioma = state ? 'en' : 'es';
+  select.value = ''; // limpia valor para evitar cache interno
+  setTimeout(() => {
+    select.value = nuevoIdioma;
+    select.dispatchEvent(new Event('change'));
+  }, 400); // pequeño retardo para asegurar cambio
 });

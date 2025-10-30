@@ -7,6 +7,11 @@
     --accent: #00ffc3;
 }
 
+html {
+  margin-top: 0 !important;
+}
+
+
 *, ::before, ::after {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -21,6 +26,39 @@ body {
     background: var(--bg);
     color: var(--black);
 }
+
+/* 🔒 Oculta el iframe superior de Google Translate */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* 🔒 Evita que se empuje el contenido hacia abajo */
+body {
+  top: 0px !important;
+}
+
+/* 🔒 Oculta el contenedor que Google añade */
+.goog-te-banner {
+  display: none !important;
+}
+
+/* 🔒 Oculta el logo "Powered by Google" */
+.goog-logo-link {
+  display: none !important;
+}
+
+/* 🔒 Oculta el texto del gadget */
+.goog-te-gadget {
+  display: none !important;
+}
+
+/* 🔒 Oculta cualquier overlay que Google meta */
+.goog-te-spinner-pos,
+.goog-te-spinner,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
@@ -107,7 +145,8 @@ header {
         width: 220px;
         height: 220px;
         margin-bottom: -30px;
-        /* animation: levemove 2s ease infinite alternate; */
+        animation: levemove 1.5s ease infinite alternate;
+        animation-delay: 5.3s;
         filter: drop-shadow(5px 40px 10px rgba(0, 0, 0, 0.082));
         user-select: none;
         -webkit-user-drag: none;
@@ -145,7 +184,7 @@ header {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
 }
 
@@ -269,7 +308,12 @@ header {
     }
 }
 
+#f1 {
+  animation: none;
+}
+
 #f2 {
+  animation: none;
   display: none;
 }
 
