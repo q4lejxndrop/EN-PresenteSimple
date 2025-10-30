@@ -719,6 +719,40 @@ header {
 }
 
 
+#homework {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+
+    & h2 {
+        color: rgb(0, 0, 0);
+        border: 3px solid rgb(117, 240, 148);
+        border-radius: 12px;
+        padding: 1rem;
+        background-color: rgba(117, 240, 148, 0.199);
+    }
+
+    & p {
+        padding: 1rem 0;
+
+    }
+
+    & img {
+        width: 50%;
+        height: auto;
+        padding: 2rem;
+        padding-top: 2.5rem;
+    }
+
+
+}
+
 @media screen and (max-width: 768px) {
 
     header {
@@ -831,6 +865,16 @@ header {
 
     .share {
         padding: 1.5rem;
+    }
+    
+    #homework {
+
+        & img {
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        padding-top: 2.5rem;
+        }
     }
 }
 
