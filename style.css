@@ -779,6 +779,15 @@ header {
     background-color: #0f0f12;
     color: var(--white);
 
+    & #btn-play-music {
+        z-index: 40;
+        background-color: transparent;
+        border: none;
+        border-radius: 12px;
+        transition: .01s ease-in-out;
+        cursor: pointer;
+    }
+
     & h2 {
         color: #75f094;
         border: 3px solid #75f094;

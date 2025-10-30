@@ -71,7 +71,6 @@ examples.addEventListener("click", function() {
 
 
 // QR
-
 document.addEventListener('DOMContentLoaded', () => {
 let btnShare = document.getElementById("btn-share");
 const qrImg = document.getElementById("qr-img");
@@ -180,6 +179,21 @@ let generalMask = document.getElementById('general-mask');
 
 
 // Game
+    // Sonidos
+    // Play Music Game
+const btnPlayMusic = document.getElementById('btn-play-music');
+
+const sonidoBg = new Audio('/Effects/game-music-series-005-splatoon-style-3-by-sascha-ende-from-filmmusic-io.mp3');
+sonidoBg.volume = .3;
+sonidoBg.load();
+
+const sonidoPlay = new Audio('/Effects/464905__plasterbrain__pc-game-ui-select.flac');
+sonidoPlay.volume = 0.10;
+sonidoPlay.load();
+
+btnPlayMusic.addEventListener('click', () => {
+  sonidoBg.play();
+});
     // Dice
 const dice = document.getElementById('dice');
 const result = document.getElementById('result');
@@ -232,6 +246,10 @@ dice.addEventListener('keydown', (e) => {
   }
 });
 
+dice.addEventListener('click', () => {
+    sonidoPlay.play();
+});
+
     // Gallery
   const ul = document.getElementById('gallery');
   const lis = document.querySelectorAll('#gallery li');
@@ -254,6 +272,7 @@ dice.addEventListener('keydown', (e) => {
       });
 
       li.classList.add('active', 'hide-layers', 'show-description');
+      sonidoPlay.play();
 
       const liRect = li.getBoundingClientRect();
       const centerX = window.innerWidth / 2;
