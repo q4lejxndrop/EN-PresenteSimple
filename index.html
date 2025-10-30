@@ -13,13 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="confetti"></canvas>
+    <div id="general-mask"></div>
     <header>
         <img src="/Icons/chat.png" 
         alt="chat"/>
-        <h1>Presente Simple</h1>
+        <div class="typewriter">
+            <h1>Presente Simple</h1>
+        </div>
         <h2>Ingles</h2>
         <div id="team">
-                    <h3>Nuestro Grupo</h3>
+                    <h3>Equipo</h3>
         </div>
         <button><a href="#w"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg></a></button>
 
@@ -28,7 +32,18 @@
                 <h4>11°</h4>
             </a>
         </div>
+
+        <div class="share">
+            <button id="btn-share">Compartir</button>
+            <ul id="container-qr-social">
+                <li class="qr-social">
+                    <img src="/qr/PreSem-qr-code.png"
+                    alt="QR-Social-TX" title="Qr Redes Sociales" id="qr-img">
+                </li>
+            </ul>
+        </div>
     </header>
+
     <section id="w">
         <img src="/Images-sections/male-runner.png" 
         alt="">
@@ -136,7 +151,7 @@
     </section>
 
     <section id="activity-one">
-        <h2>📈 Actividad 1</h2>
+        <h2>📈 Actividad <span>1</span></h2>
         <p>Escucha la siguiente canción y completa el texto.</p>
 
         <div class="text-song">
@@ -173,19 +188,60 @@
     </section>
 
     <section id="activity-two">
-        <h2>📈 Actividad 2</h2>
+        <h2>📈 Actividad <span>2</span></h2>
         <p>Crea una oración en presente simple con los siguientes emojis:</p>
 
         <div class="container-emojis">
-            <button>🫅</button>
+            <button>👦</button>
             <button>🔦</button>
             <button>🛹</button>
             <button>🎁</button>
         </div>
     </section>
 
+    <section id="homework"></section>
+
     <footer>
         <p>Made with 💜 by <a href="https://tecnimux-post.netlify.app/html/community.html">TECNIMUX</a></p>
+<div id="ghost">
+  <div id="red">
+    <div id="pupil"></div>
+    <div id="pupil1"></div>
+    <div id="eye"></div>
+    <div id="eye1"></div>
+    <div id="top0"></div>
+    <div id="top1"></div>
+    <div id="top2"></div>
+    <div id="top3"></div>
+    <div id="top4"></div>
+    <div id="st0"></div>
+    <div id="st1"></div>
+    <div id="st2"></div>
+    <div id="st3"></div>
+    <div id="st4"></div>
+    <div id="st5"></div>
+    <div id="an1"></div>
+    <div id="an2"></div>
+    <div id="an3"></div>
+    <div id="an4"></div>
+    <div id="an5"></div>
+    <div id="an6"></div>
+    <div id="an7"></div>
+    <div id="an8"></div>
+    <div id="an9"></div>
+    <div id="an10"></div>
+    <div id="an11"></div>
+    <div id="an12"></div>
+    <div id="an13"></div>
+    <div id="an14"></div>
+    <div id="an15"></div>
+    <div id="an16"></div>
+    <div id="an17"></div>
+    <div id="an18"></div>
+  </div>
+    <div id="shadow">
+    </div>
+</div>
     </footer>
     <script src="/script.js"></script>
 </body>
