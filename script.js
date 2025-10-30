@@ -170,9 +170,104 @@ let generalMask = document.getElementById('general-mask');
       requestAnimationFrame(draw);
     }
 
-    // Confeti dura unos segundos y se detiene
+// Confeti dura unos segundos y se detiene
     draw();
     setTimeout(() => {
       particles = []; // detener confeti
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }, 5000); // 5 segundos
+
+
+
+// Game
+    // Dice
+const dice = document.getElementById('dice');
+const result = document.getElementById('result');
+
+const faceRotations = {
+  1: { x: 0,   y: 0   },
+  2: { x: 90,  y: 0   },
+  3: { x: 0,   y: -90 },
+  4: { x: 0,   y: 90  },
+  5: { x: -90, y: 0   },
+  6: { x: 0,   y: 180 }
+};
+
+let isRolling = false;
+let totalSpins = 0;
+
+function launchDice() {
+  if (isRolling) return;
+  isRolling = true;
+
+  const roll = Math.floor(Math.random() * 6) + 1;
+  const extraTurns = Math.floor(Math.random() * 5) + 3;
+  totalSpins += extraTurns;
+
+  const base = faceRotations[roll];
+  const spinsX = totalSpins + Math.floor(Math.random() * 2);
+  const spinsY = totalSpins + Math.floor(Math.random() * 2);
+
+  const finalX = base.x + 360 * spinsX;
+  const finalY = base.y + 360 * spinsY;
+
+  dice.style.transform = `rotateX(${finalX}deg) rotateY(${finalY}deg)`;
+  result.textContent = 'Lanzando...';
+
+  const onEnd = (e) => {
+    if (e.propertyName && e.propertyName !== 'transform') return;
+    dice.removeEventListener('transitionend', onEnd);
+    isRolling = false;
+    result.textContent = `Salió el número: ${roll}`;
+  };
+
+  dice.addEventListener('transitionend', onEnd);
+}
+
+dice.addEventListener('click', launchDice);
+dice.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    launchDice();
+  }
+});
+
+    // Gallery
+  const ul = document.getElementById('gallery');
+  const lis = document.querySelectorAll('#gallery li');
+
+  // 🔹 Función para resetear la galería
+  function resetGallery() {
+    lis.forEach(el => {
+      el.classList.remove('active', 'hide-layers', 'show-description');
+    });
+    ul.style.transform = 'translateX(0)';
+  }
+
+  // 🔹 Evento para cada imagen
+  lis.forEach(li => {
+    li.addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que el click en la imagen dispare el reset global
+
+      lis.forEach(el => {
+        el.classList.remove('active', 'hide-layers', 'show-description');
+      });
+
+      li.classList.add('active', 'hide-layers', 'show-description');
+
+      const liRect = li.getBoundingClientRect();
+      const centerX = window.innerWidth / 2;
+      const liCenter = liRect.left + liRect.width / 2;
+      const offset = centerX - liCenter;
+
+      ul.style.transform = `translateX(${offset}px)`;
+    });
+  });
+
+  // 🔹 Evento global para volver al estado original
+  document.addEventListener('click', (e) => {
+    const clickedInsideGallery = ul.contains(e.target);
+    if (!clickedInsideGallery) {
+      resetGallery();
+    }
+  });
